@@ -1,108 +1,57 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial, Helvetica, sans-serif;
+    .bottoneVirus{
+          width: 100px;
+          height: 100px;
+          margin: 3px;
+
+    }
+.buttonRosso{
+    background-color: rgb(211, 41, 41);
 }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.buttonVerde{
+    background-color: rgb(12, 161, 37);
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
+.buttonBlu{
+    background-color: rgb(15, 12, 161);
 }
 
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+.buttonGiallo{
+    background-color: #FFFF00;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: red;
+.buttonArancione{
+    background-color: #FFA500;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
-}
 </style>
 </head>
 <body>
-
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Dropdown
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="index.html">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-  </div> 
-</div>
-
-<h3>Dropdown Menu inside a Navigation Bar</h3>
-<p>Click on the "Dropdown" link to see the dropdown menu.</p>
-
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+function tabellina2(){
+  alert ("2 4 6 8 10 12 14 16 18 20")
+}
+function tabellina3(){
+  alert ("3 6 9 12 15 18 21 24 27 30")
+}
+function tabellina4(){
+  alert ("4 8 12 16 20 24 28 32 36 40")
+}
+function tabellina5(){
+  alert ("5 10 15 20 25 30 35 40 45 50 ")
+}
+function tabellina6(){
+  alert ("6 12 18 24 30 36 42 48 54 60")
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
 </script>
-</body>
+<button class="bottoneVirus buttonRosso" onclick="location.href='link'">tabellina</button>
+<button class="bottoneVirus buttonVerde" onclick="location.href='link'">tabellina3</button>
+<button class="bottoneVirus buttonBlu" onclick="location.href='link'">tabellina4</button>
+<button class="bottoneVirus buttonGiallo" onclick="location.href='link'">tabellina5</button>
+<button class="bottoneVirus buttonArancione" onclick="location.href='link'">tabellina6</button>
+  </body>
 </html>

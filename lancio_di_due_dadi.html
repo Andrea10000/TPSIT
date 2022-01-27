@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Musso.css">
+   
+    <title>Lancio Di un dado</title>
+   
+</head>
+<body>
+   
+
+<button class="button" onclick="lanciodado(), lanciodado2()"> lancia il dado</button>
+
+
+<p></p>
+<p class="rosso" id="out3"></p>
+<p class="rosso" id="out4"></p>
+
+
+
+<script>
+     function lanciodado() {
+      let casuale=0;
+      let dado=0;
+      let parteintera=0;
+      casuale=Math.random();
+     
+
+    dado=casuale*5;
+    parteintera=Math.round(dado)+1;
+
+     //compreso tra 0 ed 1  0 è incluso 1 ' escluso'
+     document.getElementById("out3").innerHTML=parteintera;
+
+
+ 
+     }
+     
+          function lanciodado2() {
+      let casuale=0;
+      let dado=0;
+      let parteintera=0;
+      casuale=Math.random();
+     
+
+    dado=casuale*5;
+    parteintera=Math.round(dado)+1;
+
+     //compreso tra 0 ed 1  0 è incluso 1 ' escluso'
+
+     document.getElementById("out4").innerHTML=parteintera;
+
+ 
+     }
+
+     
+</script>
+
+
+
+</body>
+</html>

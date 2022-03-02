@@ -47,10 +47,10 @@
     <div id="miocontainer">
         <label for="peso grassi">Peso grassi</label>
          <input type="text" name="peso grassi" id="Grassi"><br>
-         <label for="peso grassi">Peso carboidarti</label>
+         <label for="peso grassi">Peso carboidrati</label>
          <input type="text" name="peso grassi" id="carboidarti">
         <p></p>
-         <button id="calcolaButton" onclick="Converti()">Converti il Peso in KCAL</button>
+         <button id="calcolaButton" onclick="Converti()">Converti il Peso in CAL</button>
 
 
          <div>
@@ -65,7 +65,7 @@
 <script>
     function Converti() {
       let pesograsso=  document.getElementById("Grassi").value;
-      let pesocarboidarti=  document.getElementById("carboidarti").value;
+      let pesocarboidarti=  document.getElementById("carboidrati").value;
       
       let caloriegrassi=  document.getElementById("GRASSI").innerHTML=pesograsso*9;
       let caloriecarboidrati=  document.getElementById("CARBOIDRATI").innerHTML=pesocarboidarti*4;

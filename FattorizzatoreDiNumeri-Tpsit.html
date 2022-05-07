@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pagina senza titolo</title>
+    <script type="text/javascript">
+
+/*************************************************************************/
+//  1) fattorizzare il numero 840
+        function FattorizzaNumero()
+        {
+            TrovareQualiSonoFattoriOgniNumero(840);
+        }
+        
+/*************************************************************************/
+//  2) stampare i fattori del punto 1 alternando questi ad una stringa messa in mezzo (esempio: "juve merda")
+        function TrovareQualiSonoFattoriOgniNumeroConAlternanzaDiStringa(numero)
+        {
+            var fattore=0;
+            var fattoriOUT="";
+            var QuantiFatt=0;
+            document.write("Fattori  = "+"<br/>");
+            for(fattore=1;fattore<=numero/2;fattore++)
+            {
+                if(numero%fattore==0)
+                {
+                    document.write(fattore+"<br/>");
+                    document.write("juve merda"+"<br/>");
+                }
+            }
+        }
+
+/*************************************************************************/ 
+//  3) trovare il primo numero primo successivo a 840
+        function RisultatoPrimoNumeroPrimoSuccessivoA840()
+        {
+          var PrimoNumeroPrimoSuccessivoAlNumero840=0;
+          PrimoNumeroPrimoSuccessivoAlNumero840=PrimoNumeroPrimoSuccessivoAUnNumero(840);
+          document.write("Primo Numero Primo Successivo Al Numero 840: "+PrimoNumeroPrimoSuccessivoAlNumero840);
+        }
+
+/*************************************************************************/ 
+//  4) moltiplicare questo numero con il primo numero primo successivo a 100.000
+      
+       function  RisultatoMoltiplicazioneTraDueNumeriPrimi()
+       {
+            var RisultatoMoltiplicazione=0;
+            RisultatoMoltiplicazione=MoltiplicazioneTraDueNumeriPrimi();
+            document.write("Moltiplicazione Tra Due Numeri Primi: "+RisultatoMoltiplicazione);
+       }
+
+/*************************************************************************/         
+//  5) fattorizzare il risultato 
+
+        function RisultatoTrovareQualiSonoFattoriOgniNumero()
+        {
+            var RisultatoMoltiplicazionePunto4=0;
+            var FattoriDellaMoltiplicazione=0;
+            RisultatoMoltiplicazionePunto4=MoltiplicazioneTraDueNumeriPrimi();
+            document.write("Fattori Della Moltiplicazione ( "+RisultatoMoltiplicazionePunto4+") di Numeri Primi: <br/>");
+            FattoriDellaMoltiplicazione=TrovareQualiSonoFattoriOgniNumero(RisultatoMoltiplicazionePunto4);
+        }
+       
+/*************************************************************************/       
+       function MoltiplicazioneTraDueNumeriPrimi()
+       {
+            var PrimoNumeroPrimoSuccessivoAlNumero840=0;
+            var PrimoNumeroPrimoSuccessivoAlNumero100000=0;
+            var moltiplicazione=0;
+            PrimoNumeroPrimoSuccessivoAlNumero840=PrimoNumeroPrimoSuccessivoAUnNumero(840);
+            PrimoNumeroPrimoSuccessivoAlNumero100000=PrimoNumeroPrimoSuccessivoAUnNumero(100000);
+            moltiplicazione=PrimoNumeroPrimoSuccessivoAlNumero840*PrimoNumeroPrimoSuccessivoAlNumero100000;
+            return moltiplicazione;
+       }     
+      
+
+/*************************************************************************/ 
+
+            function PrimoNumeroPrimoSuccessivoAUnNumero(num)
+            {
+                var NumeroPrimoSi=0;
+                var numPunti=num;
+                do
+                {
+                  NumeroPrimoSi=NumeroPrimoSiNo(numPunti+1);
+                  numPunti++;  
+                }while(NumeroPrimoSi==0);
+                return numPunti;
+            }
+
+ 
+/*************************************************************************/
+//Se il numero è un numero primo            
+            function NumeroPrimoSiNo(num)
+                    {
+                        var NonNumPrimo=0;
+                        var NumeroPrimoSi=0;
+                        var i=0;
+                        for(i=num; i>0; i--)
+                        {
+                            if(num%i==0)
+                            {
+                                if(i==1 || i==num){}
+                                else
+                                {
+                                   NonNumPrimo++; 
+                                }
+                            }
+                        }
+                        if(num==1)
+                        {
+                           NonNumPrimo++;
+                        }
+                        
+                        if(NonNumPrimo==0)
+                        {
+                            NumeroPrimoSi=1;
+                        }
+                        return NumeroPrimoSi;
+                    }
+            
+/*************************************************************************/
+            function TrovareQualiSonoFattoriOgniNumero(numero)
+            {
+                var fattore=0;
+                var fattoriOUT="";
+                var QuantiFatt=0;
+                document.write("Fattori  = "+"<br/>");
+                for(fattore=1;fattore<=numero/2;fattore++)
+                {
+                    if(numero%fattore==0)
+                    {
+                        document.write(fattore+"<br/>");
+                    }
+                }
+            }
+
+/*************************************************************************/ 
+    </script>
+</head>
+<body>
+       <button onclick="FattorizzaNumero()">Fattorizza il numero 840</button>
+       <button onclick="TrovareQualiSonoFattoriOgniNumeroConAlternanzaDiStringa(840)">Fattorizza il numero 840 (con alternanza di stringa in mezzo)</button>
+       <button onclick="RisultatoPrimoNumeroPrimoSuccessivoA840()">Primo Numero Primo Successivo A 840</button>
+       <button onclick="RisultatoMoltiplicazioneTraDueNumeriPrimi()">Moltiplicazione Tra Due Numeri Primi</button>
+       <button onclick="RisultatoTrovareQualiSonoFattoriOgniNumero()">Trovare Quali Sono Fattori della Moltiplicazione Tra Due Numeri Primi</button>              
+</body>
+</html>

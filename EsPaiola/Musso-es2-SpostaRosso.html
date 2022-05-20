@@ -1,0 +1,182 @@
+﻿<script type="text/javascript" language=javascript>
+var pos=0;
+var a = document.getElementsByName('ArrayDiv');
+
+function spostaRosso8() 
+{
+    for(i=0;i<a.length-7;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==1)
+    {
+        clearInterval(mioIntervallo);
+    }
+}// fine spostaRosso8
+
+function spostaRosso7() 
+{
+    for(i=0;i<a.length-6;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==2)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso8,500);
+    }
+}// fine spostaRosso7
+
+function spostaRosso6() 
+{
+    for(i=0;i<a.length-5;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==3)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso7,500);
+    }
+}// fine spostaRosso6
+
+function spostaRosso5() 
+{
+    for(i=0;i<a.length-4;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==4)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso6,500);
+    }
+}// fine spostaRosso5
+
+function spostaRosso4() 
+{
+    for(i=0;i<a.length-3;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==5)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso5,500);
+    }
+}// fine spostaRosso4
+
+
+function spostaRosso3() 
+{
+    for(i=0;i<a.length-2;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==6)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso4,500);
+    }
+}// fine spostaRosso3
+
+
+function spostaRosso2() 
+{
+    for(i=0;i<a.length-1;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==7)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso3,500);
+    }
+}// fine spostaRosso2
+
+function spostaRosso() 
+{
+    for(i=0;i<a.length;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+    }
+    a[pos].style.backgroundColor='red';
+    pos++;
+    if(pos==8)
+    {
+        clearInterval(mioIntervallo);
+        pos=0;
+        mioIntervallo=setInterval(spostaRosso2,500);
+    }
+}// fine spostaRosso
+    
+function inizia()
+{
+    for(i=0;i<a.length;i++)
+    {
+      a[i].style.backgroundColor='yellow';
+      a[i].style.left=(i*60)+10;
+    }
+    mioIntervallo=setInterval(spostaRosso,500);    
+}// fine inizia()      
+    </script>
+
+<!DOCTYPE html >
+<style type="text/css">
+     
+      .miediv
+      {
+
+         position:absolute;
+         height:50px;
+         width:50px;
+         border-width:1px;
+         border:solid black;
+		 top:20px;
+      }
+
+   </style>
+<html>
+
+<head>
+    <title>Pagina senza titolo</title>
+</head>
+<body onLoad="inizia()">
+	<!--<DIV id='Div1' style="left:10px;" class='miediv'></DIV>
+	<DIV id='Div2' style="left:80px;" class='miediv'></DIV>
+	<DIV id='Div3' style="left:150px;" class='miediv'></DIV>
+	<DIV id='Div4' style="left:220px;" class='miediv'></DIV>
+	<DIV id='Div5' style="left:290px;" class='miediv'></DIV>
+	<DIV id='Div6' style="left:360px;" class='miediv'></DIV>
+	<DIV id='Div7' style="left:430px;" class='miediv'></DIV>
+	<DIV id='Div8' style="left:500px;" class='miediv'></DIV>-->
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+	<DIV name="ArrayDiv" class='miediv'></DIV>
+</body>
+</html>

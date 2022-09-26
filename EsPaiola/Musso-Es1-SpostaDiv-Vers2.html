@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+
+TempoDiAttesa=setInterval(timer, 1000);
+var NumeroSpostamenti=5;
+var div=5;
+	
+function timer() 
+{	
+    switch(div)
+    {
+        case 1: 
+          spostaDiv("Div1");
+          div--;
+        break;
+        case 2: 
+          spostaDiv("Div2");
+          div--;
+        break;
+        case 3: 
+          spostaDiv("Div3");
+          div--;
+        break;
+        case 4: 
+          spostaDiv("Div4");
+          div--;
+        break;
+        case 5: 
+          spostaDiv("Div5");
+          div--;
+        break;
+        default: 
+            if(NumeroSpostamenti==-1)
+            {
+            clearInterval(TempoDiAttesa);
+            }
+        break;
+    }
+}	
+
+function spostaDiv(NomeDivDaSpostare)
+{
+    var pos=parseInt (document.getElementById(NomeDivDaSpostare).style.left);
+    document.getElementById(NomeDivDaSpostare).style.left = pos+100+"px";
+    NumeroSpostamenti--;
+}
+</script>
+
+
+
+<head>
+<style>
+.DIV {
+  position: absolute;
+  height:50px;
+  width:50px;
+  border:5px solid black;
+  background-color:Yellow;
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="Div1" class="DIV" style="left:10px"></div>
+<div id="Div2" class="DIV" style="left:75px"></div>
+<div id="Div3" class="DIV" style="left:140px"></div>
+<div id="Div4" class="DIV" style="left:205px"></div>
+<div id="Div5" class="DIV" style="left:270px;"></div>
+
+
+</body>
+</html>

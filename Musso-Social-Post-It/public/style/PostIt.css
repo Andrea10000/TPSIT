@@ -1,0 +1,25 @@
+.postIt
+  {
+    padding:10px;
+    display: inline-block;
+    max-height:2000px;
+    max-width:2000px;
+  }
+
+.topBar{
+  background-color:#f39c12;
+  width:200px;
+  height:40px;
+  border:solid;
+  border-color:black;
+}
+.form{
+  width:200px;
+  height:180px;
+  background-color:#f1c40f;
+    border:solid;
+  border-color:black;
+}
+.textAria{
+  pointer-events: none; /*l'utente non può interagire col contenuto del div*/
+}

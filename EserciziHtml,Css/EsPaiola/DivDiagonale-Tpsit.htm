@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Div Diagonale</title>
+    <style type="text/css">
+    #CasellaDaSpostare
+    {
+    	left:0px;	 
+        top:0px;
+        position:absolute;
+    	border: 5px solid black;
+        height: 200px;
+        width: 200px;
+        background-color: red;	
+    }
+    </style>
+    <script type="text/javascript">
+        mioIntervallo=setInterval(startCountDown, 1000);
+        let countdown=20;
+        let ContaPixel=0;
+		function startCountDown() {
+		    ContaPixel=ContaPixel+5;
+		    document.getElementById("CasellaDaSpostare").style.left=ContaPixel+ "px";
+            document.getElementById("CasellaDaSpostare").style.top=ContaPixel+ "px";
+	       	countdown--;
+			if(countdown<15)
+			{
+			  ContaPixel=ContaPixel+10;   
+			}
+			if(countdown<10)
+			{
+			  ContaPixel=ContaPixel+20;   
+			}
+			if(countdown==-1)
+		    {
+		      clearInterval(mioIntervallo);
+		    }
+		}//fine startCountDown
+		
+</script>
+</head>
+<body>
+    <div id="CasellaDaSpostare">
+    </div>
+</body>
+</html>
+
+
+<!--left:210px;	    //posizione orrizontale dal margine sinistro 
+top:50px;	    //posizione verticale dall'alto
+position:absolute;  //serve per left e top
+
+text-align:center //allineamento del testo
+
+let e var sono la stessa cosa 
+
+
+c++ linguaggio compilato deve riservarsi uno spazio di memoria per eseguire il programma, 
+
+invece il javascript è un linguaggio interpretato che esegue il programma nel browser
+
+
+offsetLeft //la posizione orrizzontale dell'oggetto in quel momento
+
+-->

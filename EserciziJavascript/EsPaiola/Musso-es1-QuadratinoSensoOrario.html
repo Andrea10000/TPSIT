@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Due Div Movimentati</title>
+
+<style>
+.CasellaDaSpostare
+    {
+    	left:0px;	 
+        top:0px;
+        position:absolute;
+    	border: 1px solid black;
+        height: 30px;
+        width: 30px;	
+    }
+    #divBlu
+    {
+        background-color: blue;	
+    }
+    
+    #divRosso
+    {
+        background-color: white;	
+    }
+    
+    #divVerde
+    {
+        background-color: green;	
+    }
+</style>
+
+
+
+
+<script type="text/javascript">
+   let ContaPixel=190;
+   let ContaPixelTop=0;
+   let ContaPixelDivBlu=0;
+   let ContaPixelTopDivBlu=0;
+   IntervalloEst=setInterval(startCountDown, 1000);
+    function startCountDown() 
+    {
+        ContaPixelDivBlu=ContaPixelDivBlu+20;
+        document.getElementById("divVerde").style.left=ContaPixelDivBlu+ "px"; 
+         
+        if(ContaPixelDivBlu==200)
+		    {
+		      clearInterval(IntervalloEst);
+		      IntervalloSud=setInterval(startCountDown2, 1000);
+		    }
+	}    
+        function startCountDown2()
+        {
+            ContaPixelTopDivBlu=ContaPixelTopDivBlu+20;
+            document.getElementById("divVerde").style.top=ContaPixelTopDivBlu+ "px";
+            if(ContaPixelTopDivBlu==200)
+		    {
+		      clearInterval(IntervalloSud);
+		      IntervalloOvest=setInterval(startCountDown3, 1000);
+		    }
+        }
+        
+        function startCountDown3()
+        {
+            ContaPixelDivBlu=ContaPixelDivBlu-20;
+            document.getElementById("divVerde").style.left=ContaPixelDivBlu+ "px"; 
+            if(ContaPixelDivBlu==0)
+		    {
+		      clearInterval(IntervalloOvest);
+		      IntervalloNord=setInterval(startCountDown4, 1000);
+		    }
+        }
+        
+        function startCountDown4()
+        {
+            ContaPixelTopDivBlu=ContaPixelTopDivBlu-20;
+            document.getElementById("divVerde").style.top=ContaPixelTopDivBlu+ "px";
+            if(ContaPixelTopDivBlu==0)
+		    {
+		      clearInterval(IntervalloNord);
+		      IntervalloEst=setInterval(startCountDown, 1000);
+		    }
+        }
+</script>
+
+</head>
+
+<body>
+<div class="CasellaDaSpostare" id="divVerde">
+    </div>
+<!--<div class="CasellaDaSpostare" style="<!--position:absolute; left:190px; top:30px;--><!--" id="divRosso">-->
+</div>
+</body>
+</html>

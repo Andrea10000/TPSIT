@@ -1,0 +1,152 @@
+<script language='JavaScript'>
+    var mio_array = new Array();
+   
+
+
+function Avvio()
+{
+    c = parseInt(document.F1.C.value); //dom (modello di documento ad oggetto), prendere dall'input text la parte intera è lo metto in c
+    r = parseInt(document.F1.R.value); //dom (modello di documento ad oggetto), prendere dall'input text la parte intera è lo metto in r
+    RiempiMatrice(c,r);
+    DisegnaTabella(c,r,1);
+    OrdinaRighe(c,r);
+    DisegnaTabella(c,r,0);
+    OrdinaCollona(c, r);
+    DisegnaTabella(c,r,0);
+
+}
+
+
+function OrdinaRighe(QuanteColonne, QuanteRighe)
+{
+    var VarScambio, r=0, c=0, i=0;
+    for(r=0; r<QuanteRighe; r++)
+    {     
+        for(c=0; c<QuanteColonne-1; c++)  
+            {
+                for(i=c+1; i<QuanteColonne; i++)
+                {
+                    if(mio_array[r][c]>mio_array[r][i])
+                    {
+                        VarScambio=mio_array[r][c];
+                        mio_array[r][c]=mio_array[r][i];
+                        mio_array[r][i]=VarScambio;
+                    }
+                }
+            }
+    }
+}
+
+
+
+
+function OrdinaCollona(QuanteColonne, QuanteRighe)
+{
+    var VarScambio, r=0, c=0, i=0;
+    for(c=0; c<QuanteColonne; c++)
+    {     
+        for(r=0; r<QuanteRighe-1; r++)  
+            {
+                for(i=r+1; i<QuanteRighe; i++)
+                {
+                    if(mio_array[r][c]>mio_array[i][c])
+                    {
+                        VarScambio=mio_array[r][c];
+                        mio_array[r][c]=mio_array[i][c];
+                        mio_array[i][c]=VarScambio;
+                    }
+                }
+            }
+    }
+}
+
+function CercaMax(QuanteColonne,QuanteRighe)
+{
+    var  maxvett=0;
+	var x = 0;
+    	var y = 0;
+   for(x=0; x<QuanteRighe; x++)
+   {
+      for(y=0; y<QuanteColonne; y++)  
+      {
+        if(mio_array[x][y]>maxvett)
+        {
+           maxvett=mio_array[x][y];
+        }
+      }
+   }
+   return maxvett;
+}
+
+function DisegnaTabella(QuanteColonne,QuanteRighe,coloraSiNo){
+    document.write("<TABLE border='1'>");
+        var valoreMassimo, valoreCella;
+	var x = 0;
+    	var y = 0;
+    for (x=0; x<QuanteRighe; x++)
+    {
+        document.write("<TR>");
+        for (y=0; y<QuanteColonne; y++)
+        {
+            valoreCella=mio_array[x][y];
+            if(coloraSiNo==1)
+            {
+                valoreMassimo=CercaMax(QuanteColonne,QuanteRighe);
+                if(valoreCella==valoreMassimo)
+                {
+                    document.write("<TD style='background-color:red;color:white;'>");
+                }
+                else
+                {
+                    document.write("<TD>");
+                }
+            }
+            else
+            {
+                document.write("<TD>");
+            }
+           document.write("&nbsp;"+valoreCella+"&nbsp;");
+           document.write("</TD>");    
+        }
+        document.write("</TR>");
+    }
+      document.write("</TABLE>");
+      document.write("<br>");
+}
+
+function RiempiMatrice(QuanteColonne, QuanteRighe)
+{
+    var x = 0;
+    var y = 0;
+    var massimo=99, minimo=1;
+    for (x=0; x<r; x++)
+    {
+        mio_array[x] = new Array();
+        for (y=0; y<c; y++)
+        {
+            mio_array[x][y]= parseInt(Math.random()*(massimo-minimo+1))+minimo;
+        }
+    }
+}
+
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="F1">
+    <LABEL>colonne:</LABEL>
+    <INPUT type='text' name='C' size='3' value='0'>
+    <LABEL>righe:</LABEL>
+    <INPUT type='text' name='R' size='3' value='0'>
+    <INPUT type='button' name='B' value='Genera' onClick="Avvio()">
+    </form>
+</body>
+</html>

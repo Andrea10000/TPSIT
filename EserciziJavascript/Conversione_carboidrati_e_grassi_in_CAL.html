@@ -10,7 +10,7 @@
 
 #miocontainer{
  border: 2px red solid;
-  height: 400px;
+  height: 320px;
   width: 330px;
   margin: 20px;
   padding:10px;
@@ -48,9 +48,7 @@
         <label for="peso grassi">Peso grassi</label>
          <input type="text" name="peso grassi" id="Grassi"><br>
          <label for="peso grassi">Peso carboidrati</label>
-         <input type="text" name="peso grassi" id="carboidrati"><br>
-         <label for="peso proteine">Peso proteine</label>
-         <input type="text" name="peso proteine" id="Proteine"><br>
+         <input type="text" name="peso grassi" id="carboidrati">
         <p></p>
          <button id="calcolaButton" onclick="Converti()">Converti il Peso in CAL</button>
 
@@ -59,9 +57,7 @@
              <p>CALORIE DEI GRASSI:</p>
              <p id="GRASSI">Ogni grammo di grasso si converte in 9 calorie</p>
              <p>CALORIE DEI CARBOIDRATI:</p>
-             <p id="CARBOIDRATI">Ogni grammo di carboidarti si converte in 9 calorie</p>
- 			 <p>CALORIE DELLE PROTEINE:</p>
- 			 <p id="PROTEINE">Ogni grammo di proteine si converte in 4 calorie</p>
+             <p id="CARBOIDRATI">Ogni grammo di carboidarti si converte in 4 calorie</p>
              <p>CALORIE TOTALI:</p>
              <p id="CALORIeTOTALI"></p>
          </div>
@@ -72,12 +68,9 @@
       let pesocarboidarti=  document.getElementById("carboidrati").value;
       
       let caloriegrassi=  document.getElementById("GRASSI").innerHTML=pesograsso*9;
-      let caloriecarboidrati=  document.getElementById("CARBOIDRATI").innerHTML=pesocarboidarti*9;
- 
-      let pesoproteine=  document.getElementById("Proteine").value;
-      let calorieproteine=  document.getElementById("PROTEINE").innerHTML=pesoproteine*4;
-             
-      document.getElementById("CALORIeTOTALI").innerHTML=caloriegrassi+caloriecarboidrati+calorieproteine; 
+      let caloriecarboidrati=  document.getElementById("CARBOIDRATI").innerHTML=pesocarboidarti*4;
+      
+      document.getElementById("CALORIeTOTALI").innerHTML=caloriegrassi+caloriecarboidrati; 
     }
 
 </script>
